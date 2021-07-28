@@ -1,0 +1,11 @@
+.card {
+    padding:2rem;
+    @include card($col-background-2);
+    box-shadow:.2rem .2rem .8rem rgba(0,0,0, .6);
+
+    &--translucent {
+        @include card(rgba($col-background-1, .75));
+        box-shadow:.2rem .2rem .8rem rgba(0,0,0, .6);
+        backdrop-filter:blur(6px);
+    }
+}

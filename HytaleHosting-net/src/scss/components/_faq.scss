@@ -1,0 +1,66 @@
+.faq {
+    padding-bottom:$gutter * 3;
+
+    &__list {
+        display:flex;
+        flex-direction:column;
+
+        width:900px;
+        max-width:100%;
+        margin:0 auto;
+    }
+
+    &__item {
+        display:flex;
+        align-items:flex-start;
+        padding:$gutter;
+        @include card($col-translucent-2);
+        backdrop-filter:blur(5px);
+        border:2px solid transparent;
+
+        transition:.2s ease;
+
+        &:not(:last-of-type) {
+            margin-bottom:$gutter / 2;
+        }
+
+        &:hover {
+            background-color:$col-background-3;
+            border-color:$col-primary;
+        }
+    }
+
+    &__item-image {
+        flex:0 0 6rem;
+        margin-right:$gutter;
+        object-fit:cover;
+
+        filter:grayscale(100%);
+        opacity:.5;
+
+        transition:.2s ease;
+    }
+
+    &__item:hover &__item-image {
+        filter:grayscale(0);
+        opacity:1;
+    }
+
+    &__item-content {
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        padding-left:$gutter;
+    }
+
+    &__question {
+        font-weight:700;
+        font-size:1.8rem;
+    }
+
+    &__answer {
+        color:$col-light-3;
+        font-size:1.5rem;
+        margin-top:.5rem;
+    }
+}

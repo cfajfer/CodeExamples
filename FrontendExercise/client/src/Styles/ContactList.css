@@ -1,0 +1,38 @@
+/* Styles */
+
+.Contact-list-button{
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0px;
+}
+.Contact-list-button:hover{
+    transition: .15s;
+    background: #f4f8ff;
+    cursor: pointer;
+}
+
+.Scroll-list{
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 360px;
+}
+
+.Scroll-list::-webkit-scrollbar-track
+{
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+
+.Scroll-list::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+.Scroll-list::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+	background-color: #bdbdbd;
+}

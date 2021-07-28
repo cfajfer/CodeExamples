@@ -1,0 +1,15 @@
+/* Styles */
+.Header{
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
+}
+
+.Header-text{
+    padding-left: 28px;
+    font-weight: bold!important;
+}
+
+.Right-icon{
+    margin-left: auto!important;
+}

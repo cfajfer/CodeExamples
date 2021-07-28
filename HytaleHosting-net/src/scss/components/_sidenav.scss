@@ -1,0 +1,108 @@
+.sidenav {
+    flex:0 0 20rem;
+    height:100%;
+
+    position:sticky;
+    top:$gutter;
+
+    @include respond(992) {
+        flex:1 1 100%;
+        width:100%;
+        position:relative;
+        top:unset;
+        display:flex;
+        align-items:flex-start;
+
+        width:calc(100% + #{$gutter});
+        margin:-$gutter / 2;
+    }
+
+    @include respond(576) {
+        flex-direction:column;
+        align-items:stretch;
+        flex:0;
+    }
+
+    &__nav-section {
+        @include translucentCard(lighten($col-background-2, 10%));
+
+        
+        &--padding {
+            padding:1.5rem;
+        }
+        
+        @include respond(992) {
+            flex:1 1 calc(50% - #{$gutter});
+            margin:$gutter / 2 !important;
+        }
+        &:not(:last-of-type) {
+            margin-bottom:$gutter;
+        }
+
+        &:last-of-type {
+            @include respond(992) {
+                display:none;
+            }
+        }
+    }
+
+    &__nav-input {
+        padding:0 1rem 1rem 1rem;
+        position: relative;
+
+        input {
+            padding:.7rem 1rem;
+            width:100%;
+            font-size:1.4rem;
+        }
+
+        button {
+            position: absolute;
+            right:1rem;
+            top:50%;
+            transform:translateY(-50%);
+            margin-top:-.5rem;
+            
+            svg {
+                width:1.2rem;
+            }
+        }
+    }
+
+    &__nav-title {
+        padding:1rem;
+        @include uppercase(1.2rem);
+        // @include card(rgba(#fff, .06));
+        border-radius:0;
+        color:$col-light-3;
+    }
+
+    &__nav-list {
+        font-size:1.3rem;
+    }
+
+    &__nav-item {
+        display:block;
+    }
+
+    &__nav-link {
+        display:block;
+        padding:1rem 1.5rem;
+        color:$col-light-2;
+        font-size:1.4rem;
+        font-weight:500;
+
+        transition:all .1s ease;
+
+        &:not(&--active):hover {
+            background-color:rgba($col-primary, .1);
+            color:$col-light-1;
+        }
+
+        &--active {
+            background-color:rgba($col-primary, .15);
+            color:$col-primary;
+            font-weight:500;
+        }
+    }
+}

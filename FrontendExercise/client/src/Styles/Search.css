@@ -1,0 +1,17 @@
+/* Override */
+.MuiOutlinedInput-input{ 
+    padding: 10px 10px!important;
+}
+.MuiInputBase-root {
+    background-color: #fff;
+}
+.MuiFormControl-marginNormal{
+    margin-bottom: 0px!important;
+}
+
+/* Styles */
+.Search{
+    max-width: -webkit-fill-available;
+    padding: 10px 16px!important;
+    background-color: #f3f3f3;
+}

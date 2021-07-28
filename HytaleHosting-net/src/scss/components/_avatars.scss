@@ -1,0 +1,118 @@
+.avatars {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-evenly;
+    padding-bottom:1rem;
+
+    &--small {
+        justify-content:space-between;
+        width:calc(100% + #{$gutter});
+        margin-left:-$gutter / 2;
+    }
+
+    &__item {
+        text-align:center;
+        margin:$gutter / 2;
+
+        @include respond(1200) {
+            min-width:25rem;
+        }
+    }
+    
+
+    &--small &__item {
+        @include respond(1200) {
+            min-width:20rem;
+        }
+    }
+
+    &__item:not(.avatars__item--no-hover):hover &__image {
+        filter:drop-shadow(1px 1px 10px $col-border-primary);
+        transform:scale(1.06)
+    }
+    &__item:not(.avatars__item--no-hover):hover &__info {
+        background-color:$col-background-3;
+    }
+
+    &__image {
+        display:block;
+        height:16rem;
+        width:auto;
+        margin:0 auto;
+        object-fit:cover;
+        filter:drop-shadow(1px 1px 10px  rgba(#000, .5));
+        z-index:1;
+        position: relative;
+        transition:all .2s ease;
+        transform-origin:bottom center;
+    }
+
+    &--small &__image {
+        height:10rem;
+    }
+
+    &__info {
+        z-index:2;
+        position: relative;
+        background-color:$col-background-4;
+        border:.4rem solid $col-border-primary;
+        border-radius:$radius;
+        box-shadow:$shadow-primary-inset;
+        padding:2.5rem 1.5rem 3rem 1.5rem;
+        margin-bottom:$gutter;
+        min-width:15rem;
+
+        transition:all .2s ease;
+
+        table {
+            width:100%;
+            margin:.5rem 0;
+        }
+
+        tr {
+            display:flex;
+            margin:.5rem 0;
+        }
+
+        th {
+            text-align:right;
+            flex:1 1 auto;
+            padding-right:.5rem;
+        }
+        td {
+            text-align:left;
+            flex:1 1 auto;
+            color:$col-light-3;
+        }
+    }
+    &--small &__info {
+        padding:1.5rem .5rem 2rem .5rem;
+        font-size:1.2rem;
+
+        tr {
+            margin:.2rem 0;
+        }
+    }
+
+    &__name {
+        font-weight:900;
+        letter-spacing:1px;
+        text-transform:uppercase;
+        margin:0;
+    }
+
+    &__price {
+        font-weight:700;
+        letter-spacing:1px;
+
+        span {
+            margin-right:.5rem;
+            font-weight:900;
+        }
+    }
+
+    &--small &__button {
+        padding:.7rem 2rem;
+        font-size:1.2rem;
+    }
+}

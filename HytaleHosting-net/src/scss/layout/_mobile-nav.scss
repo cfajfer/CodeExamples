@@ -1,0 +1,133 @@
+.mobile-nav {
+    background-color:$col-background-2;
+    position: fixed;
+    width:34rem;
+    padding-right:4rem;
+    top:0;
+    right:-4rem;
+    height:100%;
+    z-index:999;
+    box-shadow:0 0 1rem rgba(0,0,0,.3);
+    overflow: hidden;
+
+    transform:translateX(100%);
+
+    transition:.5s $timing-function-elastic;
+    
+    &__background {
+        position: fixed;
+        z-index:998;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100%;
+        background-color:rgba(0,0,0,.3);
+        backdrop-filter:blur(5px);
+        
+        opacity:0;
+        visibility:hidden;
+        transition:.5s $timing-function-elastic;
+
+        &-enter-active, &-enter-done {
+            opacity:1;
+            visibility:visible;
+        }
+    }
+
+    &__background-enter-active &, &__background-enter-done & {
+        transform:translateX(0);
+    }
+
+    &__header {
+        width:calc(100% + 4rem);
+        padding:$gutter;
+        padding-right:6rem;
+        height:$nav-height;
+        display:flex;
+        align-items:center;
+
+        background-color:rgba(0,0,0,.1);
+    }
+
+    &__logo-container {
+        @include flexCenter;
+    }
+
+    &__cross {
+        color:$col-light-3;
+        margin-left:auto;
+        padding:1rem;
+
+        cursor:pointer;
+
+        svg {
+            transform:rotate(45deg);
+            fill:currentColor;
+            width:2.5rem;
+            height:2.5rem;
+            transition:.2s ease;
+        }
+
+        &:hover {
+            color:$col-light-2;
+            
+            svg {
+                transform:rotate(135deg);
+            }
+        }
+    }
+
+    &__list {
+        border-top:1px solid rgba(255,255,255,.03);
+    }
+
+    &__item {
+        margin-top:$gutter;
+    }
+
+
+    &__link {
+        color:$col-light-3;
+        display:block;
+        padding:.5rem 2rem;
+        font-size:1.5rem;
+        font-weight:500;
+
+        border-left:3px solid transparent;
+
+        transition:.15s ease;
+
+        &:hover {
+            color:$col-light-1;
+        }
+
+        &--active {
+            border-color:$col-light-1;
+            color:$col-light-1;
+        }
+    }
+
+    &__social-list {
+		  margin: 1rem;
+    	display: -webkit-flex;
+    	display: -moz-box;
+    	display: flex;
+    	-webkit-align-items: center;
+    	-moz-box-align: center;
+    	align-items: center;
+    }
+
+    &__social-item {
+		  margin: 1rem;
+    }
+
+    &__social-link {
+
+        svg {
+            width:2.6rem;
+            height:2.6rem;
+            opacity:.9;
+            fill:brown
+        }
+    }
+}

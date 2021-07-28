@@ -1,0 +1,38 @@
+$gutter: 2rem;
+$nav-height: 9rem;
+
+$col-primary: #17ACFF;
+$col-primary-dark: #00C2FF;
+$col-primary-light: lighten($col-primary, 5%);
+
+$col-background-1: #0A0D1F;
+$col-background-2: #111a3b;
+$col-background-3: #113669;
+$col-background-4: #172242;
+
+$col-translucent-1: rgba(#000824, .83);
+$col-translucent-2: rgba(#111a3b, .83);
+
+$col-border: #495866;
+$col-border-light: #758594;
+$col-border-dark: #2b3641;
+$col-border-primary: #00C2FF;
+
+$col-light-1: #fff;
+$col-light-2: #E2E2E2;
+$col-light-3: #b6b6b6;
+
+$col-green: #33B550;
+$col-red: #d42c43;
+
+$col-button:rgba(#19276B, .75);
+
+$radius: .4rem;
+$shadow: 0 0 1rem rgba(#000, .2);
+
+$shadow-primary: 0px 0px 2rem $col-border-primary;
+$shadow-primary-inset: inset 0px 0px 2rem  $col-border-primary;
+$shadow-primary-both: inset 0px 0px 2rem  $col-border-primary, 0px 0px 2rem $col-border-primary;
+
+$timing-function-elastic: cubic-bezier(0.34, 1.4, 0.64, 1);
+$timing-function-elastic-opp: cubic-bezier(0.36, 0, 0.66, -0.4);

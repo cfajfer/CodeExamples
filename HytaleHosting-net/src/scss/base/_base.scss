@@ -1,0 +1,46 @@
+html {
+    //defines 1rem as 10px to make math easier
+    font-size:62.5%;
+
+    @include respond(1200) { font-size:57.5% }
+    @include respond(992) { font-size:55% }
+    @include respond(768) { font-size:52.5% }
+    @include respond(576) { font-size:50% }
+
+    overflow-x:hidden;
+}
+
+body {
+    background-color:$col-background-1;
+    color:$col-light-2;
+    line-height:1.4;
+
+    font-family: 'Noto Sans JP', sans-serif;
+
+    font-size:1.6rem;
+
+}
+
+.root {
+    flex:1;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.main {
+    flex:1;
+    display:grid;
+    grid-template-columns:100%;
+}
+
+.margin { @include margin }
+
+
+// AOS LIBRARY
+[data-aos] {
+    body[data-aos-easing="elastic"] &,
+    &[data-aos][data-aos-easing="elastic"] {
+      transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+    }
+  }

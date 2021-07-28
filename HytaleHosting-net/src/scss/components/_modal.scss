@@ -1,0 +1,138 @@
+.modal {
+    min-width:30rem;
+    min-height:20rem;
+    max-width:calc(100vw - #{$gutter * 2});
+
+    transition:transform .3s ease, opacity .3s ease;
+    transform: rotateX(90deg) translateY(20px);
+    opacity:0;
+    transform-origin:top center;
+
+    @include card($col-background-2);
+    display:flex;
+    flex-direction:column;
+    padding:0;
+
+    &--center {
+        text-align:center;
+    }
+
+    cursor:default;
+
+    &__background {
+        position:fixed;
+        z-index:998;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        visibility:hidden;
+        opacity:0;
+
+        transform-style: preserve-3d;
+        perspective:1300px;
+
+        background:rgba(0,0,0,.5);
+        backdrop-filter: blur(5px);
+        
+        transition:all .4s ease;
+        cursor: crosshair;
+
+        &--active {
+            visibility:visible;
+            opacity:1;
+        }
+    }
+
+    &__background--active & {
+        transform:rotateX(0) translateY(0);
+        opacity:1;
+    }
+
+    &__header {
+        padding:$gutter / 1.5 $gutter;
+        background-color:rgba(0,0,0,.2);
+        border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    &__title {
+        margin:0;
+        font-size:1.8rem;
+        color:$col-light-2;
+    }
+
+    &__content {
+        padding:$gutter;
+        flex:1;
+
+        &--center {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+    }
+
+    &__form {
+
+    }
+}
+
+
+.form-select {
+    overflow:hidden;
+    font-size:1.4rem;
+    
+    &__control {
+        background-color:$col-background-1 !important;
+        border-color:$col-border !important;
+        box-shadow:none !important;
+        font-size:1.4rem;
+        font-family:inherit !important;
+
+        &:focus {
+            box-shadow:0 0 0 1px $col-primary !important;
+        }
+    }
+
+    &__input, &__input > input {
+        color:$col-light-2 !important;
+    }
+
+    &__single-value {
+        color:$col-light-1 !important;
+    }
+
+    &__value-container:focus {
+        outline:none;
+    }
+
+    &__menu {
+        background-color:$col-background-1 !important;
+        border-color:$col-border-light !important;
+        color:$col-light-1 !important;
+        text-align:left;
+    }
+
+    &__option {
+        background-color:$col-background-1 !important;
+        color:$col-light-2 !important;
+        font-size:1.4rem;
+
+        transition:all .1s ease;
+        cursor:pointer !important;
+
+
+
+        &:hover {
+            background-color:var(--col-primary) !important;
+            color:#fff !important;
+        }
+    }
+
+    &__indicator-separator {
+        background-color:var(--col-border-dark) !important;
+    }
+}

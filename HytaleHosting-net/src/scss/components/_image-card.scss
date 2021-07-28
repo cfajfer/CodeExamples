@@ -1,0 +1,51 @@
+.image-card {
+    margin:$gutter / 2;
+    min-width:30rem;
+    flex:1;
+
+    @include card(rgba(#1F244A, .7));
+    box-shadow:.2rem .2rem .4rem rgba(0,0,0,.3);
+    backdrop-filter:blur(6px);
+    padding:$gutter;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+    text-align:center;
+    border:.2rem solid transparent;
+
+    transition:all .2s ease;
+    cursor:default;
+
+
+    &:hover {
+        border-color:$col-border-primary;
+        box-shadow:$shadow-primary;
+        background-color:$col-background-3;
+        transform:translateY(-3px);
+    }
+
+    &__list {
+        display:flex;
+        flex-flow:row wrap;
+        width:calc(100% + #{$gutter});
+        justify-content:center;
+        margin:$gutter 0 $gutter (-$gutter / 2);
+    }
+
+    &__image {
+        display:block;
+        filter:drop-shadow(0 0 5px rgba(#000, .6));
+    }
+
+    &__title {
+        text-transform:uppercase;
+        margin:$gutter / 2 0 $gutter / 2 0;
+        color:$col-primary;
+    }
+
+    &__description {
+        
+    }
+}

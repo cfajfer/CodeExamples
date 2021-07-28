@@ -1,0 +1,118 @@
+.create {
+
+
+    &__info {
+        padding:$gutter 0;
+        display:flex; 
+    }
+
+    &__info-wrapper {
+        display:flex;
+        align-items:center;
+
+        @include respond(1400) {
+            & > div:first-of-type {
+                display:none !important;
+            }
+        }
+    }
+    
+    &__info-image {
+        border-radius:$radius;
+        border:.3rem solid $col-border-primary !important;
+        object-fit:cover;
+        object-position:right;
+    }
+
+    &__info-list {
+        margin-left:$gutter * 2;
+        flex:1 0 60%;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+
+        @include respond(992) {
+            margin-left:unset;
+        }
+    }
+
+    &__info-item {
+        display:flex;
+        align-items:center;
+        margin:.5rem 0;
+
+        @include respond(992) {
+            flex-direction:column;
+            align-items:flex-start;
+        }
+
+        &:hover {
+            background: linear-gradient(90deg, #0c6092, transparent);
+            cursor:default;
+        }
+    }
+
+    &__info-item-main {
+        display:flex;
+        align-items:center;
+        padding:1rem 1.5rem;
+
+        background-color:rgba($col-background-3, .5);
+        border-radius: $radius 0rem 0rem $radius;
+
+        flex:0 0 25rem;
+        color:rgba(255,255,255,.8);
+
+        box-shadow:$shadow;
+
+        transition:.2s ease;
+
+
+        @include respond(992) {
+            flex:1;
+        }
+        
+        & img {
+            transition:.2s ease;
+            filter:grayscale(60%);
+        }
+        
+        & > h3 {
+            margin-left:1rem;
+            
+            text-transform:uppercase;
+            letter-spacing:1px;
+            font-weight:800;
+            font-size:1.4rem;
+
+            transition:.2s ease;
+        }
+    }
+
+    &__info-item:hover &__info-item-main {
+        flex:0 0 28rem;
+        background-color:rgba($col-background-3, .8);
+        box-shadow:inset 0px 0px 2rem rgba($col-border-primary, .5);
+        color:rgba(255,255,255,1);
+
+        @include respond(1400) {
+            flex:0;
+        }
+
+        img {
+            filter:grayscale(0);
+        }
+    }
+
+    &__info-item-text {
+        padding: .2rem 0rem .2rem $gutter;
+        align-self:center;
+    
+        p {
+            font-size:1.6rem;
+            color:$col-light-3;
+            margin:0 !important;
+        }
+    }
+}

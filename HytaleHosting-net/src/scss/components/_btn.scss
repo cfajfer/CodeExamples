@@ -1,0 +1,65 @@
+.btn {
+    display:inline-block;
+    background-color:$col-button;
+    backdrop-filter:blur(5px);
+    border:.2rem solid $col-border-primary;
+
+    border-radius:$radius;
+    box-shadow:$shadow;
+    padding:1rem 3rem;
+
+    color:$col-light-2;
+    font-size:1.4rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+
+    cursor:pointer;
+    transition:all .1s ease;
+
+    &:hover {
+        background-color:rgba(#253585, .75);
+        color:$col-light-1;
+    }
+    &:disabled {
+        background-color:rgba(#4b4b4b, .65);
+        color:rgba(180, 180, 180, 0.65);
+        border:.2rem solid rgba(199, 199, 199, 0.50);
+        cursor: default;
+    }
+
+    &--small {
+        font-size:1.2rem;
+        padding:.8rem 2rem;
+    }
+
+    &--primary {
+        background-color:$col-primary;
+
+        &:hover {
+            background-color:$col-primary-light;
+        }
+    }
+
+    &--green {
+        background-color:$col-green;
+        border:.2rem solid darken($col-green, 8%);
+        color:$col-light-1;
+        text-shadow:-1px 1px 4px rgba(#000, .5);
+
+        &:hover {
+            background-color:lighten($col-green, 5%);
+        }
+    }
+
+    &--red {
+        background-color:$col-red;
+        border:.2rem solid darken($col-red, 8%);
+        color:$col-light-1;
+        text-shadow:-1px 1px 4px rgba(#000, .5);
+
+        &:hover {
+            background-color:lighten($col-red, 5%);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@mixin respond($breakpoint) {
+    @media only screen and (max-width:$breakpoint * 1px) {
+        @content;
+    }
+}
+
+@mixin margin {
+    width:1250px;
+    max-width:calc(100vw - 2rem);
+    margin:0 auto;
+}
+
+@mixin flexCenter {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+@mixin card($color) {
+    background-color:$color;
+    border-radius:$radius;
+    box-shadow:$shadow;
+}
+
+@mixin uppercase($size) {
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
+    font-size:$size;
+}
+
+@mixin translucentCard($color) {
+    @include card(rgba($color, .75));
+    box-shadow:.2rem .2rem .8rem rgba(0,0,0, .3);
+    backdrop-filter:blur(6px);
+}

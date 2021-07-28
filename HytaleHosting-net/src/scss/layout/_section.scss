@@ -1,0 +1,29 @@
+.section {
+    padding:$gutter 0;
+    background-size:cover;
+    background-position:center;
+
+    &--overlay {
+        box-shadow:inset 1000px 1000px 1000px rgba($col-background-1, .6) !important;
+        &-shadow {
+            box-shadow:inset 1000px 1000px 1000px rgba($col-background-1, .6), $shadow-primary;
+        }
+    }
+
+    &--border-top {
+        border-top:.3rem solid $col-border-primary;
+        box-shadow:$shadow-primary;
+    }
+
+    &--border-bottom {
+        border-bottom:.3rem solid $col-border-primary;
+        box-shadow:$shadow-primary;
+    }
+
+    &__wrapper {
+        width:100%;
+        &--margin {
+            @include margin;
+        }
+    }
+}

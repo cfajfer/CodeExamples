@@ -1,0 +1,36 @@
+.blog {
+    margin-top:0;
+    
+    &__container {
+        display:grid;
+        grid-template-columns:repeat(12, 1fr);
+        grid-gap:$gutter;
+        align-items:start;
+        margin-bottom:$gutter;
+        
+        @include respond(992) {
+            grid-template-columns:1fr;
+        }
+    }
+
+    &__main {
+        grid-column:4 / -1;
+
+        @include respond(992) {
+            grid-column:1 / -1;
+        }
+    }
+
+    &__side {
+        grid-column:1 / 4;
+        position:sticky;
+        top:$gutter;
+
+        @include respond(992) {
+            grid-column:1 / -1;
+            height:auto;
+            top:unset;
+            position:unset;
+        }
+    }
+}

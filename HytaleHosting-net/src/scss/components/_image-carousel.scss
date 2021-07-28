@@ -1,0 +1,64 @@
+.image-carousel {
+    
+
+    &__tab-list {
+        display:flex;
+        justify-content:center;
+        flex-flow:row wrap;
+    }
+
+    &__tab-item {
+        margin:$gutter / 2;
+    }
+
+    &__tab-button {
+        padding:1.5rem;
+        width:20rem;
+        background-color:rgba($col-primary, .15);
+        border:2px solid rgba($col-primary, .5);
+        border-radius:$radius;
+
+        transition:.1s ease;
+        cursor:pointer;
+
+        box-shadow:0px 0px 2rem transparent;
+
+        &:not(&--active):hover {
+            background-color:rgba($col-primary, .25);
+        }
+
+        @include respond(992) {
+            width:14rem;
+            font-size:1.2rem;
+        }
+
+        &--active {
+            transform:scale(1.1);
+            background-color:rgba($col-primary, .4);
+            border-color:$col-primary;
+            box-shadow:0px 0px 1rem $col-border-primary;
+        }
+    }
+
+    &__tab-label {
+        text-transform:uppercase;
+        letter-spacing:1px;
+
+        @include respond(992) {
+            margin-top:.5rem;
+        }
+    }
+
+
+    &__main {
+        border-radius:$radius;
+
+        margin:$gutter 0;
+        @include flexCenter;
+    }
+
+    &__main-image {
+        border-radius:$radius;
+        border:.5rem solid $col-primary !important;
+    }
+}
